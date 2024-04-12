@@ -23,20 +23,20 @@ const resetGame= ()=>{
     turn0=true;
     count=0;
     enableBoxes();
-    msgContainer.classList.add("hide");   //showwinner ne hide karva msgcontainer ne j classlist ma add karu hide class //
+    msgContainer.classList.add("hide");  
 };
 
 boxes.forEach((box)=>{
     box.addEventListener("click",()=>{
         //console.log("box was clicked");
-       if(turn0){           //player0 ni turn hoii to 0print thaase
+       if(turn0){
         box.innerText="O";
         box.style.color="red";
-        turn0=false;        //alternate turn hoi atla maate aek turn pchi turn0 ne false karvu pde...
-       }else{               // playerX ni turn hoii to X ptint thasse
+        turn0=false;        
+       }else{               
         box.innerText="X";
         box.style.color="purple";
-        turn0=true;         // aek turn pchi 0 ni turn aave atla maate turn0 ne true karvu pde...
+        turn0=true;        
        }
        box.disabled=true;
        count++;
@@ -57,17 +57,17 @@ const drawGame=()=>{
 }
 
 // disablebox function //
-const disableBoxes=()=>{     // ek  vaar box click thai jaay pchi value chnage no thaavi joi
+const disableBoxes=()=>{     
     for(let box of boxes){      
-        box.disabled=true;      //disable=nochange
+        box.disabled=true;     
     }
 };
 
-// enablebox function //     //new game start thaay tyare badha box enable rahe... //
-const enableBoxes=()=>{         //enable=change
+// enablebox function //    
+const enableBoxes=()=>{         
     for(let box of boxes){
         box.disabled=false;    
-        box.innerText="";       //reset game kariye tyare boxes ni innertext value reset karva innertext empty karyu...//
+        box.innerText="";      
     }
 };
 
@@ -76,7 +76,7 @@ const enableBoxes=()=>{         //enable=change
 //showwinner function//
 const showWinner=(winner)=>{
     msg.innerText=`Congratulations, Winner is ${winner}`;
-    msgContainer.classList.remove("hide");   // winner jyare win thaay tyare j batave atla maatr msg-container ne hide rakhyu
+    msgContainer.classList.remove("hide");  
     disableBoxes();
 };
 
